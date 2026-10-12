@@ -224,6 +224,7 @@ environment variable named `WEB_BUNDLE_SIGNING_PASSPHRASE`.
 - Fixed the TypeScript declarations: the `types` entry in `package.json` now points to `lib/wbn-sign.d.ts`, the declaration of the (deprecated) `IntegrityBlockSigner` is no longer missing, and the declarations no longer require `esModuleInterop`.
 - Publishing now always rebuilds and tests the package. The tests of the public API run against both the ESM and the CommonJS build, and further tests check that `lib/` contains no stale files and that the emitted declarations type-check.
 - ECDSA P-256 signing and verification now request SHA-256 explicitly instead of relying on the default digest of the crypto library, so they also work with Node.js builds based on BoringSSL.
+- The published package now contains only `bin/`, `lib/`, `README.md` and `package.json`; development configuration files are no longer included.
 
 ### v0.3.1
 - Enhanced **CLI**: New commands `add-signature`, `remove-signature`, `replace-signature`, and `info`.
